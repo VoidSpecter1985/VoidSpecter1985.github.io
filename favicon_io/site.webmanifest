@@ -1,0 +1,14 @@
+{
+    "name": "Noe Bravo - Portafolio",
+    "short_name": "Noe Bravo",
+    "icons": [
+        {
+            "src": "/media/UPS.svg",
+            "sizes": "any",
+            "type": "image/svg+xml"
+        }
+    ],
+    "theme_color": "#080816",
+    "background_color": "#080816",
+    "display": "standalone"
+}

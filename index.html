@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VoidSpecter Portfolio</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Arial, Helvetica, sans-serif;
+background:#000000;
+color:#33ff00;
+transition:0.4s;
+}
+
+.dark-mode{
+background:#0d1117;
+color:white;
+}
+
+.navbar{
+background:rgba(0,0,0,0.85);
+padding:15px;
+}
+
+.navbar-brand{
+color:rgb(9, 223, 5) !important;
+font-size:32px;
+font-weight:bold;
+}
+
+.nav-link{
+color:rgb(55, 255, 0) !important;
+margin-left:20px;
+font-size:20px;
+}
+
+.theme-btn{
+border:none;
+padding:10px 18px;
+border-radius:20px;
+background:orange;
+color:rgb(0, 0, 0);
+font-weight:bold;
+cursor:pointer;
+margin-left:20px;
+}
+
+header{
+position:relative;
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+header video{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-2;
+}
+
+.overlay{
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0, 0, 0, 0.6);
+z-index:-1;
+}
+
+.hero{
+color:rgb(43, 255, 0);
+}
+
+.profile{
+width:220px;
+height:220px;
+border-radius:50%;
+border:5px solid rgb(255, 0, 0);
+object-fit:cover;
+}
+
+.hero h1{
+font-size:80px;
+margin-top:20px;
+}
+
+.hero h3{
+font-size:40px;
+}
+
+section{
+padding:90px 20px;
+}
+
+.card-custom{
+background:#000000;
+padding:35px;
+border-radius:20px;
+margin-top:30px;
+transition:0.4s;
+}
+
+.dark-mode .card-custom{
+background:#161b22;
+}
+
+.skills img{
+width:90px;
+margin:20px;
+transition:0.4s;
+}
+
+.skills img:hover{
+transform:scale(1.1);
+}
+
+.titulo-naranja{
+color:#06d937;
+font-size:34px;
+margin-bottom:40px;
+font-weight:500;
+}
+
+.tech-grid{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:20px;
+flex-wrap:wrap;
+margin-bottom:60px;
+}
+
+.tech-card{
+width:150px;
+height:165px;
+background:#000000;
+border:1px solid #00ff55;
+border-radius:12px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+transition:0.3s;
+}
+
+.tech-card img{
+width:85px;
+height:85px;
+object-fit:contain;
+margin-bottom:15px;
+}
+
+.tech-card h4{
+font-size:18px;
+font-weight:bold;
+color:#ffffff;
+text-shadow:0 0 8px #00ff55;
+}
+
+.tech-card:hover{
+transform:scale(1.08);
+box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+.dark-mode .tech-card{
+background:#161b22;
+}
+
+.dark-mode .tech-card h4{
+color:white;
+}
+
+.btn-warning{
+padding:15px 30px;
+border-radius:15px;
+font-size:22px;
+font-weight:bold;
+box-shadow:0px 0px 15px rgba(255,165,0,0.5);
+transition:0.3s;
+}
+
+.btn-warning:hover{
+transform:scale(1.05);
+}
+
+
+#educacion{
+background:#050505;
+padding:90px 20px;
+}
+
+.titulo-educacion{
+color:#08ed13;
+text-align:center;
+font-size:36px;
+font-weight:bold;
+margin-bottom:35px;
+}
+
+.educacion-card{
+display:flex;
+background:#120d0a;
+border:1px solid #b77a00;
+border-radius:20px;
+overflow:hidden;
+margin-bottom:45px;
+box-shadow:0 0 25px rgba(255,153,0,0.15);
+}
+
+.educacion-logo{
+width:330px;
+background:linear-gradient(135deg,#ffc226,#1100ff);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:25px;
+color:white;
+font-size:20px;
+font-weight:500;
+}
+
+.educacion-logo img{
+width:300px;
+height:300px;
+object-fit:contain;
+margin-bottom:15px;
+}
+
+.educacion-info{
+flex:1;
+padding:35px 45px;
+color:#d1d5db;
+font-size:20px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+.educacion-info h3{
+font-size:22px;
+font-weight:bold;
+margin-bottom:30px;
+color:#d1d5db;
+}
+
+.cursos{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin-top:15px;
+}
+
+.cursos span{
+border:1px solid #3a2500;
+padding:10px 18px;
+border-radius:25px;
+font-size:14px;
+font-weight:bold;
+color:white;
+}
+
+@media(max-width:768px){
+.educacion-card{
+flex-direction:column;
+}
+.educacion-logo{
+width:100%;
+}
+.educacion-info{
+padding:30px 25px;
+}
+}
+
+footer{
+background:#111;
+color:white;
+padding:80px 20px;
+text-align:center;
+}
+
+footer a{
+color:green;
+margin:15px;
+}
+
+
+/* ===== MEJORA FINAL: DRAGÓN VERDE DE KALI LINUX ===== */
+#tecnologias{
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle at center, #101815 0%, #050505 55%, #000 100%);
+    color: white;
+}
+
+.kali-dragon-box{
+    position: relative;
+    width: min(100%, 1050px);
+    min-height: 420px;
+    margin: 0 auto 55px auto;
+    border-radius: 28px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #020402;
+    border: 1px solid rgba(0,255,102,0.35);
+    box-shadow: 0 0 30px rgba(0,255,102,0.20), inset 0 0 45px rgba(0,255,102,0.08);
+}
+
+.kali-dragon-box::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background: linear-gradient(90deg, rgba(0,0,0,0.82), rgba(0,0,0,0.20), rgba(0,0,0,0.82));
+    z-index:1;
+}
+
+.kali-dragon-img{
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    object-fit: cover;
+    opacity: 0.86;
+    filter: saturate(1.35) contrast(1.15) drop-shadow(0 0 22px #00ff66);
+    transform: scale(1.02);
+}
+
+.kali-dragon-text{
+    position:absolute;
+    z-index:2;
+    text-align:center;
+    padding: 25px;
+    color:white;
+}
+
+.kali-dragon-text h2{
+    font-size: clamp(38px, 6vw, 82px);
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-shadow: 0 0 20px #00ff66, 0 0 35px rgba(0,255,102,0.65);
+    margin-bottom: 15px;
+}
+
+.kali-dragon-text p{
+    font-size: clamp(18px, 2.5vw, 30px);
+    color:#d9ffe6;
+    text-shadow: 0 0 10px #00ff66;
+    margin:0;
+}
+
+.tech-card{
+    border: 1px solid rgba(0,255,102,0.12);
+}
+
+.dark-mode #tecnologias,
+body.dark-mode #tecnologias{
+    background: radial-gradient(circle at center, #06140b 0%, #030303 60%, #000 100%);
+}
+
+@media(max-width:768px){
+    .kali-dragon-box{
+        min-height: 300px;
+    }
+    .kali-dragon-img{
+        min-height: 300px;
+    }
+}
+
+
+
+/* ===== ARREGLO DE COLORES - JUSTYN ===== */
+.tech-card{
+    background: #050505;
+    border: 1px solid rgba(0,255,102,0.45);
+    box-shadow: 0 0 14px rgba(0,255,102,0.12);
+}
+
+.tech-card h4{
+    color: #ffffff !important;
+    text-shadow: 0 0 8px rgba(0,255,102,0.45);
+}
+
+.dark-mode .tech-card h4,
+body.dark-mode .tech-card h4{
+    color: #ffffff !important;
+}
+
+.tech-card:hover{
+    box-shadow: 0 0 22px rgba(0,255,102,0.35);
+}
+
+/* Iconos de contacto con colores pedidos */
+footer a .fa-envelope{
+    color: #00a8ff !important; /* correo tipo Outlook */
+}
+
+footer a .fa-github{
+    color: #8b949e !important; /* gris/negro para GitHub */
+}
+
+footer a .fa-linkedin-square{
+    color: #0a66c2 !important; /* LinkedIn azul */
+}
+
+footer a .fa-whatsapp{
+    color: #25d366 !important; /* WhatsApp verde */
+}
+
+footer a:hover .fa-envelope,
+footer a:hover .fa-github,
+footer a:hover .fa-linkedin-square,
+footer a:hover .fa-whatsapp{
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 10px currentColor);
+}
+
+footer i{
+    transition: 0.3s;
+}
+
+footer h1{
+    color: #ffffff;
+}
+
+footer p{
+    color: #ffffff;
+}
+
+
+@keyframes dragonFloat{
+0%{transform:translateY(0px) scale(1);}
+50%{transform:translateY(-12px) scale(1.02);}
+100%{transform:translateY(0px) scale(1);}
+}
+@keyframes ledPulse{
+0%{filter:drop-shadow(0 0 10px #00ff55) brightness(1);}
+50%{filter:drop-shadow(0 0 40px #00ff55) brightness(1.4);}
+100%{filter:drop-shadow(0 0 10px #00ff55) brightness(1);}
+}
+.kali-dragon-box img,
+.kali-dragon-img{
+animation: dragonFloat 4s ease-in-out infinite, ledPulse 2s ease-in-out infinite;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+
+<div class="container">
+
+<a class="navbar-brand" href="#">
+VoidSpecter1985
+</a>
+
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navbarNav">
+
+<ul class="navbar-nav ml-auto">
+
+<li class="nav-item">
+<a class="nav-link" href="#about">Acerca de</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#educacion">Educación</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#skills">Habilidades</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#tecnologias">Tecnologías</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#projects">Proyectos</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#contact">Contacto</a>
+</li>
+
+</ul>
+
+
+</button>
+
+</div>
+
+</div>
+
+</nav>
+
+<header>
+
+<video autoplay muted loop playsinline>
+<source src="media/istockphoto-2188368895-640_adpp_is.mp4" type="video/mp4">
+</video>
+
+<div class="overlay"></div>
+
+<div class="hero">
+
+<img src="media/image.png" class="profile">
+
+<h1>Justyn Rengel</h1>
+
+<h3>Ingeniería en Sistemas | Ciberseguridad</h3>
+
+</div>
+
+</header>
+
+<section id="about">
+
+<div class="container text-center">
+
+<h1>Acerca de mí</h1>
+
+<div class="card-custom">
+
+<p>
+¡Hola!
+Me llamo Justyn Rengel, soy un estudiante de la Universidad Politécnica Salesiana, donde estoy cursando la carrera de Ingeniería en Computación. Soy graduado en el área técnica del colegio comision de transito del Ecuador. Actualmente me encuentro en el 6to semestre de la carrera, con un nivel B1+ en inglés, desarrollando proyectos tecnológicos orientados a la innovación en el aprendizaje mediante plataformas educativas dinámicas.
+</p>
+
+<p>
+Soy un joven de 23 años actualmente estoy cursando la carrera de Ingeniería en Computación, apasionado por la tecnología y la innovación. Me motiva resolver problemas complejos a través del desarrollo de soluciones digitales eficientes. Disfruto combinar mis estudios técnicos con mi espíritu aventurero, lo cual me lleva a estar en constante aprendizaje y crecimiento.
+</p>
+
+<p>
+Estudiante apasionado por programación, desarrollo web y ciberseguridad.
+</p>
+
+<p>
+Actualmente me encuentro aprendiendo GitHub, Linux, Python y ethical hacking.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<div class="container text-center">
+
+<h1>Habilidades</h1>
+
+<div class="skills">
+
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg">
+
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg">
+
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">
+
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg">
+
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg">
+
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg">
+
+</div>
+
+</div>
+
+</section>
+
+<section id="tecnologias">
+
+<div class="container text-center">
+
+<div class="kali-dragon-box">
+<img src="media/kali_linux_wallpaper_4k_by_aenain_db8r2pd-fullview.jpg" alt="Dragón verde de Kali Linux" class="kali-dragon-img">
+<div class="kali-dragon-text">
+<h2>Kali Linux</h2>
+<p>VoidSpecter1985 | Ciberseguridad</p>
+</div>
+</div>
+
+<h1 class="titulo-naranja">Frameworks</h1>
+
+<div class="tech-grid">
+
+<div class="tech-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg">
+<h4>Node.js</h4>
+</div>
+
+<div class="tech-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg">
+<h4>Bootstrap</h4>
+</div>
+
+<div class="tech-card">
+<img src="media/express-yellow.svg">
+<h4>Express.js</h4>
+</div>
+
+</div>
+
+<h1 class="titulo-naranja">Herramientas</h1>
+
+<div class="tech-grid">
+
+<div class="tech-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/maven/maven-original.svg">
+<h4>Maven</h4>
+</div>
+
+<div class="tech-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg">
+<h4>VS Code</h4>
+</div>
+
+<div class="tech-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg">
+<h4>Git</h4>
+</div>
+
+<div class="tech-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg">
+<h4>Docker</h4>
+</div>
+
+</div>
+
+<h1 class="titulo-naranja">Bases de datos</h1>
+
+<div class="tech-grid">
+
+<div class="tech-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg">
+<h4>MySQL</h4>
+</div>
+
+<div class="tech-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg">
+<h4>MongoDB</h4>
+</div>
+
+<div class="tech-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg">
+<h4>Firebase</h4>
+</div>
+
+<div class="tech-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg">
+<h4>PostgreSQL</h4>
+</div>
+
+</div>
+
+<h1 class="titulo-naranja">Otros</h1>
+
+<div class="tech-grid">
+
+<div class="tech-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg">
+<h4>GitHub</h4>
+</div>
+
+<div class="tech-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg">
+<h4>Linux</h4>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section id="educacion">
+
+<div class="container">
+
+<h1 class="titulo-educacion">Educación</h1>
+
+<div class="educacion-card">
+
+<div class="educacion-logo">
+<img src="media/UPS.svg" alt="Universidad Politécnica Salesiana">
+<p>UNIVERSIDAD POLITÉCNICA</p>
+<p>SALESIANA</p>
+</div>
+
+<div class="educacion-info">
+<h3>INGENIERÍA EN CIENCIAS DE LA COMPUTACIÓN</h3>
+<p>Abril, 2022 (Comienzo)</p>
+<p>Promedio: 85 - 100</p>
+
+<div class="cursos">
+<span>Cursos:</span>
+<span>CS 533: CISCO NETWORKING ACADEMY</span>
+<span>CS 540: CONCEPTOS DE CLOUD Y VIRTUALIZACIÓN</span>
+</div>
+
+</div>
+
+</div>
+
+<div class="educacion-card">
+
+<div class="educacion-logo">
+<img src="media/logo_colegio.jpg" alt="Logo de mi colegio">
+<p>Unidad Educativa Carlos Arosemena Tola</p>
+</div>
+
+<div class="educacion-info">
+<h3>TÍTULO DE BACHILLER</h3>
+<p>Técnico - Área Técnica de Servicios Informáticos.</p>
+<p>Promedio de 8.85</p>
+</div>
+
+</div>
+
+<div class="educacion-card">
+
+<div class="educacion-logo">
+<img src="media/Limpieza.jpg" alt="Mantenimiento de PC">
+<p>Mantenimiento de PC</p>
+</div>
+
+<div class="educacion-info">
+<h3>CERTIFICADO</h3>
+<p>Limpieza y mantenimiento de computadoras.</p>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="video-container">
+    <video id="miVideo" autoplay muted loop playsinline class="video-baile" style="width:500px; max-width:500px; height:auto; display:block; margin:0 auto; border-radius:18px;">
+        <source src="media/Video bailecito.mp4" type="video/mp4">  
+    </video>
+    <p style="text-align:center;">
+🎧 Haz click sobre la DJ para activar o desactivar la música 🎵
+</p>
+<script>
+const video = document.getElementById("miVideo");
+
+const canciones = [
+    "media/bailecito.mp3",
+    
+
+];
+
+let cancionActual = 0;
+const audio = new Audio(canciones[cancionActual]);
+
+video.addEventListener("click", function() {
+    if (audio.paused) {
+        audio.play();
+    } else {
+        audio.pause();
+    }
+});
+
+audio.addEventListener("ended", function() {
+    cancionActual++;
+
+    if (cancionActual >= canciones.length) {
+        cancionActual = 0;
+    }
+
+    audio.src = canciones[cancionActual];
+    audio.play();
+});
+</script>
+</div>
+</section>
+
+
+
+<section id="projects">
+
+<div class="container text-center">
+
+<h1>Mis Proyectos</h1>
+
+<div class="card-custom">
+
+<h3>Proyecto de Redes II, Plataforma Web
+    Y Prácticas de Servicio Comunitario
+</h3>
+
+<p>
+Proyecto universitario enfocado en redes, infraestructura y tecnología.
+</p>
+
+<a href="media/Proyecto Redes.pdf" target="_blank" class="btn btn-danger text-white btn-lg">
+    <i class="fa fa-eye"></i>
+    Ver Proyecto
+</a>
+<br><br>
+<a href="media/LOS 7 reinos  HATBLACK.pdf" target="_blank" class="btn btn-danger text-white btn-lg">
+    <i class="fa fa-eye"></i>
+    Ver Proyecto
+</a>
+<br><br>
+<a href="media/U4 repositorio github.pdf" target="_blank" class="btn btn-danger text-white btn-lg">
+    <i class="fa fa-eye"></i>
+    Ver Proyecto
+</a>
+<br><br>
+<a href="media/JUSTYN RENGEL PRÁCTICAS DE SERVICIO COMUNITARIO.pdf" target="_blank" class="btn btn-danger text-white btn-lg">
+    <i class="fa fa-eye"></i>
+    Ver Proyecto
+</a>
+<br><br>
+</div>
+
+<div class="card-custom">
+
+<h3>Portafolio Web</h3>
+
+<p>
+Sitio web desarrollado con HTML, CSS y JavaScript.
+</p>
+
+</div>
+
+<div class="card-custom">
+
+<h3>Ciberseguridad</h3>
+
+<p>
+Aprendizaje de Linux, GitHub y ethical hacking.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<footer id="contact">
+
+<h1>Contáctame</h1>
+
+<p>
+Puedes escribirme o agregar mis redes sociales.
+</p>
+
+<a href="mailto:justynrengel2020@gmail.com" target="_blank">
+<i class="fa fa-envelope fa-3x"></i>
+</a>
+
+<a href="https://github.com/VoidSpecter1985" target="_blank">
+<i class="fa fa-github fa-3x"></i>
+</a>
+
+<a href="https://www.linkedin.com/in/justyn-rengel-57a22b334/" target="_blank">
+<i class="fa fa-linkedin-square fa-3x"></i>
+</a>
+<a href="https://wa.me/5930960028022" target="_blank">
+    <i class="fa fa-whatsapp fa-3x"></i>
+</a>
+
+<p style="margin-top:30px;">
+VoidSpecter1985 © 2026
+</p>
+
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+const toggleButton = document.getElementById("theme-toggle");
+
+if (toggleButton) {
+    toggleButton.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+
+        if(document.body.classList.contains("dark-mode")){
+            toggleButton.innerHTML = "☀️ Modo Claro";
+        }else{
+            toggleButton.innerHTML = "🌙 Modo Oscuro";
+        }
+    });
+}
+
+</script>
+
+</body>
+
+</html>
+
+
